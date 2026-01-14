@@ -25,8 +25,108 @@
 
 <body>
 
-    <!-- CONTENT GOES HERE -->
-    <h1>Hello, world!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-4">
+                <h1>Annyeonghaseo iel imnida!</h1>
+            </div>
+            <div class="col-4">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="col-4">
+                <canvas id="myChart2" height="300"></canvas>
+            </div>
+            <div class="col-4">
+                <canvas id="myChart3" height="300"></canvas>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Chart 1 -->
+
+        <script>
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['English', 'French', 'Other', 'N/A'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [44, 2, 51, 3],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                }
+            });
+        </script>
+
+        <!-- Chart 2 -->
+
+        <script>
+            const ctx2 = document.getElementById('myChart2');
+
+            new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'Born in Canada', 
+                        '5 Years', 
+                        '5-10 Years', 
+                        '> 10 Years', 
+                        'International', 
+                        'Other'
+                    ],
+
+                    datasets: [{
+                        label: 'Immigration Status',
+                        data: [38, 14, 7, 11, 29, 0, 1],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                }
+            });
+        </script>
+
+        <!-- Chart 3 -->
+
+        <script>
+            const ctx3 = document.getElementById('myChart3');
+
+            new Chart(ctx3, {
+                type: 'line',
+                data: {
+                    labels: [
+                        '2020', 
+                        '2021', 
+                        '2022', 
+                        '2023', 
+                        '2024', 
+                    ],
+
+                    datasets: [{
+                        label: 'Revenue (in millions)',
+                        data: [405, 362, 293, 319, 353],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Expense (in millions)',
+                        data: [430, 350, 321, 353, 370],
+                        borderWidth: 1
+                    }
+                ]
+                },
+                options: {
+
+                }
+            });
+        </script>
+    </div>
 
 </body>
 
